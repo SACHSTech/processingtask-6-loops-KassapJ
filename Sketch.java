@@ -8,7 +8,7 @@ public class Sketch extends PApplet {
    */
   public void settings() {
 	// put your size call here
-    size(600, 600);
+    size(500, 500);
   }
 
   /** 
@@ -50,14 +50,26 @@ public class Sketch extends PApplet {
 
   //Quadrant 3
   strokeWeight(1);
-  int color = 0;
+  //int color = 0;
   for(int i = 0; i <= width / 2; i++){
-    stroke(color);
+    stroke(i);
     line(i, height / 2, i, height);
-    color += (255 / (width / 2));
+    //color += (255 / (width / 2));
   }
+
+  //Quadrant 4
+    for(int j = 0; j <= 90; j += 45){
+      stroke(width / 300);
+      fill(220,93,52);
+      rotateZ(radians(j));
+      ellipse((float) (width / 1.333), (float) (height / 1.333), width / 3, height / 20);
+    }
+
+    rotateZ(0);
+    fill(38,108,45);
+    noStroke();
+    ellipse((float) (width / 1.333), (float) (height / 1.333), width / 10, height / 10);
 
   }
   
-  // define other methods down here.
 }
